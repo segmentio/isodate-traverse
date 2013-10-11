@@ -1,6 +1,6 @@
 
 # isodate-traverse
-  
+
   Traverse an object, converting all ISO strings to real Dates.
 
 ## Installation
@@ -24,8 +24,8 @@ var traversed = traverse(obj);
 
 ## API
 
-### traverse(obj)
-  Traverse an `obj`, converting all ISO strings to real Dates.
+### traverse(obj, [strict])
+  Traverse an `obj`, converting all ISO strings to real Dates. By default, `strict` mode will be enabled, requiring at least YYYY-MM-DD
 
 ## License
 

@@ -19,10 +19,11 @@ module.exports = traverse;
  * @return {Object}
  */
 
-function traverse (obj) {
+function traverse (obj, strict) {
   obj = clone(obj);
+  if (strict === undefined) strict = true;
   each(obj, function (key, val) {
-    if (isodate.is(val)) {
+    if (isodate.is(val, strict)) {
       obj[key] = isodate.parse(val);
     } else if (is.object(val)) {
       obj[key] = traverse(val);

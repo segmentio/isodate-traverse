@@ -11,6 +11,18 @@ it('should convert isostrings', function () {
   assert('2013-09-04T00:57:26.434Z' == traversed.date.toISOString());
 });
 
+it('should not convert numbers by default', function () {
+  var obj = { number: '4000' };
+  var traversed = traverse(obj);
+  assert('4000' === traversed.number);
+});
+
+it('should convert numbers if strict mode is disabled', function () {
+  var obj = { date: '2012' };
+  var traversed = traverse(obj, false);
+  assert(2011 == traversed.date.getFullYear());
+});
+
 it('should return a clone', function () {
   var obj = { a: '2' };
   var traversed = traverse(obj);

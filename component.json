@@ -2,7 +2,7 @@
   "name": "isodate-traverse",
   "repo": "segmentio/isodate-traverse",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Traverse an object, converting all ISO strings to real Dates.",
   "keywords": ["ISO", "date", "datestring", "parse", "object", "convert"],
   "dependencies": {
