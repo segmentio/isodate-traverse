@@ -1,4 +1,4 @@
-0.0.2 - October 10, 2013
+0.1.0 - October 10, 2013
 ------------------------
 
 * Adding strict to the API, enabling by default
