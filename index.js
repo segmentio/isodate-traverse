@@ -1,9 +1,17 @@
 
-var clone = require('clone')
-  , each = require('each')
-  , is = require('is')
-  , isodate = require('isodate');
+var is = require('is');
+var isodate = require('isodate');
 
+var clone;
+var each;
+
+try {
+  clone = require('clone');
+  each = require('each');
+} catch (err) {
+  clone = require('clone-component');
+  each = require('each-component');
+}
 
 /**
  * Expose `traverse`.
