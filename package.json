@@ -27,9 +27,9 @@
     "url": "https://github.com/segmentio/isodate-traverse/issues"
   },
   "dependencies": {
-    "each-component": "0.0.1",
+    "each-component": "component/each#0.1.0",
     "clone-component": "~0.1.0",
-    "is": "git://github.com/ianstormtaylor/is",
-    "isodate": "git://github.com/segmentio/isodate"
+    "is": "ianstormtaylor/is#0.1.0",
+    "isodate": "segmentio/isodate#0.0.1"
   }
 }
