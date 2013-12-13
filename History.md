@@ -1,8 +1,11 @@
+0.2.0 - December 13, 2013
+-------------------------
+* add array support, by [@dominicbarnes](https://github.com/dominicbarnes)
+* cleanup
+
 0.1.0 - October 10, 2013
 ------------------------
-
-* Adding strict to the API, enabling by default
-
+* add `strict` argument which is enabled by default
 
 0.0.1 - September 12, 2013
 --------------------------

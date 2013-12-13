@@ -1,7 +1,7 @@
 
 # isodate-traverse
 
-  Traverse an object, converting all ISO strings to real Dates.
+  Traverse an object (or array) and convert all ISO strings into Dates.
 
 ## Installation
 

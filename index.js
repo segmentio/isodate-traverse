@@ -1,7 +1,6 @@
 
 var is = require('is');
 var isodate = require('isodate');
-
 var clone;
 var each;
 
@@ -19,9 +18,9 @@ try {
 
 module.exports = traverse;
 
-
 /**
- * Traverse an object, parsing all ISO strings into dates and returning a clone.
+ * Traverse an object or array, and return a clone with all ISO strings parsed
+ * into Date objects.
  *
  * @param {Object} obj
  * @return {Object}
@@ -29,6 +28,8 @@ module.exports = traverse;
 
 function traverse (input, strict) {
   if (strict === undefined) strict = true;
+  input = clone(input);
+
   if (is.object(input)) {
     return object(input, strict);
   } else if (is.array(input)) {
@@ -36,8 +37,15 @@ function traverse (input, strict) {
   }
 }
 
+/**
+ * Object traverser.
+ *
+ * @param {Object} obj
+ * @param {Boolean} strict
+ * @return {Object}
+ */
+
 function object (obj, strict) {
-  obj = clone(obj);
   each(obj, function (key, val) {
     if (isodate.is(val, strict)) {
       obj[key] = isodate.parse(val);
@@ -48,8 +56,15 @@ function object (obj, strict) {
   return obj;
 }
 
+/**
+ * Array traverser.
+ *
+ * @param {Array} arr
+ * @param {Boolean} strict
+ * @return {Array}
+ */
+
 function array (arr, strict) {
-  arr = clone(arr);
   each(arr, function (val, x) {
     arr[x] = traverse(val, strict);
   });

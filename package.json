@@ -1,18 +1,9 @@
 {
   "name": "isodate-traverse",
-  "version": "0.1.0",
-  "description": "Traverse an object, converting all ISO strings to real Dates.",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "make test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/segmentio/isodate-traverse.git"
-  },
+  "repository": "git://github.com/segmentio/isodate-traverse.git",
+  "version": "0.2.0",
+  "license": "MIT",
+  "description": "Traverse an object and convert all ISO strings into Dates.",
   "keywords": [
     "ISO",
     "date",
@@ -21,11 +12,6 @@
     "object",
     "convert"
   ],
-  "author": "Segment.io",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/segmentio/isodate-traverse/issues"
-  },
   "dependencies": {
     "each-component": "component/each#0.1.0",
     "clone-component": "~0.1.0",

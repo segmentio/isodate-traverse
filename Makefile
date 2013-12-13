@@ -2,13 +2,13 @@
 build: components index.js
 	@component build --dev
 
+clean:
+	@rm -fr build components
+
 components: component.json
 	@component install --dev
 
-clean:
-	rm -fr build components
-
 test: build
-	open test/index.html
+	@open test/index.html
 
-.PHONY: test
+.PHONY: clean test
