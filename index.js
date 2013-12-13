@@ -27,15 +27,31 @@ module.exports = traverse;
  * @return {Object}
  */
 
-function traverse (obj, strict) {
-  obj = clone(obj);
+function traverse (input, strict) {
   if (strict === undefined) strict = true;
+  if (is.object(input)) {
+    return object(input, strict);
+  } else if (is.array(input)) {
+    return array(input, strict);
+  }
+}
+
+function object (obj, strict) {
+  obj = clone(obj);
   each(obj, function (key, val) {
     if (isodate.is(val, strict)) {
       obj[key] = isodate.parse(val);
-    } else if (is.object(val)) {
-      obj[key] = traverse(val);
+    } else if (is.object(val) || is.array(val)) {
+      obj[key] = traverse(val, strict);
     }
   });
   return obj;
+}
+
+function array (arr, strict) {
+  arr = clone(arr);
+  each(arr, function (val, x) {
+    arr[x] = traverse(val, strict);
+  });
+  return arr;
 }
