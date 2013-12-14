@@ -6,7 +6,6 @@
   "description": "Traverse an object and convert all ISO strings into Dates.",
   "keywords": ["ISO", "date", "datestring", "parse", "object", "convert"],
   "dependencies": {
-    "component/clone": "0.1.0",
     "component/each": "0.0.1",
     "ianstormtaylor/is": "0.0.5",
     "segmentio/isodate": "0.0.1"

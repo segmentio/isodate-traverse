@@ -7,34 +7,40 @@ describe('isodate-traverse', function () {
 
   it('should convert isostrings', function () {
     var obj = { date: '2013-09-04T00:57:26.434Z' };
-    var traversed = traverse(obj);
-    assert('2013-09-04T00:57:26.434Z' == traversed.date.toISOString());
+    traverse(obj);
+    assert('2013-09-04T00:57:26.434Z' == obj.date.toISOString());
+  });
+
+  it('should not affect irrelevant object properties', function () {
+    var obj = { a: '2013-12-13T23:35:50.000Z', b: "foo", c: null };
+    traverse(obj);
+    assert('foo' === obj.b);
+    assert(null === obj.c);
+  });
+
+  it('should not affect irrelevant array indexes', function () {
+    var obj = [ '2013-12-13T23:35:50.000Z', "foo", null ];
+    traverse(obj);
+    assert('foo' === obj[1]);
+    assert(null === obj[2]);
   });
 
   it('should not convert numbers by default', function () {
     var obj = { number: '4000' };
-    var traversed = traverse(obj);
-    assert('4000' === traversed.number);
+    traverse(obj);
+    assert('4000' === obj.number);
   });
 
   it('should convert numbers if strict mode is disabled', function () {
     var obj = { date: '2012' };
-    var traversed = traverse(obj, false);
-    assert(2011 == traversed.date.getFullYear());
-  });
-
-  it('should return a clone object', function () {
-    var obj = { a: '2' };
-    var traversed = traverse(obj);
-    assert(obj != traversed);
-    assert(equal({ a: '2' }, traversed));
+    traverse(obj, false);
+    assert(2011 == obj.date.getFullYear());
   });
 
   it('should iterate through arrays', function () {
     var arr = [{ date: '2013-09-04T00:57:26.434Z' }];
-    var traversed = traverse(arr);
-    assert(arr != traversed);
-    assert('2013-09-04T00:57:26.434Z' == traversed[0].date.toISOString());
+    traverse(arr);
+    assert('2013-09-04T00:57:26.434Z' == arr[0].date.toISOString());
   });
 
   it('should iterate through nested arrays', function () {
@@ -42,16 +48,16 @@ describe('isodate-traverse', function () {
       date: '2013-09-04T00:57:26.434Z',
       array: [{ date: '2013-09-04T00:57:26.434Z' }]
     }];
-    var traversed = traverse(arr);
-    assert(arr != traversed);
-    assert('2013-09-04T00:57:26.434Z' == traversed[0].array[0].date.toISOString());
+    traverse(arr);
+    assert('2013-09-04T00:57:26.434Z' == arr[0].date.toISOString());
+    assert('2013-09-04T00:57:26.434Z' == arr[0].array[0].date.toISOString());
   });
 
   it('should propagate the "strict" parameter for both types of traversals', function () {
     var obj = { a: '2012', b: [{ c: '2012' }] };
-    var traversed = traverse(obj, false);
-    assert(equal(2011, traversed.a.getFullYear()));
-    assert(equal(2011, traversed.b[0].c.getFullYear()));
+    traverse(obj, false);
+    assert(equal(2011, obj.a.getFullYear()));
+    assert(equal(2011, obj.b[0].c.getFullYear()));
   });
 
 });
