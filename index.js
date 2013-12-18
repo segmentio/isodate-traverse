@@ -1,14 +1,11 @@
 
 var is = require('is');
 var isodate = require('isodate');
-var clone;
 var each;
 
 try {
-  clone = require('clone');
   each = require('each');
 } catch (err) {
-  clone = require('clone-component');
   each = require('each-component');
 }
 
@@ -28,7 +25,6 @@ module.exports = traverse;
 
 function traverse (input, strict) {
   if (strict === undefined) strict = true;
-  input = clone(input);
 
   if (is.object(input)) {
     return object(input, strict);
@@ -50,7 +46,7 @@ function object (obj, strict) {
     if (isodate.is(val, strict)) {
       obj[key] = isodate.parse(val);
     } else if (is.object(val) || is.array(val)) {
-      obj[key] = traverse(val, strict);
+      traverse(val, strict);
     }
   });
   return obj;
@@ -66,7 +62,11 @@ function object (obj, strict) {
 
 function array (arr, strict) {
   each(arr, function (val, x) {
-    arr[x] = traverse(val, strict);
+    if (is.object(val)) {
+      traverse(val, strict);
+    } else if (isodate.is(val, strict)) {
+      arr[x] = isodate.parse(val);
+    }
   });
   return arr;
 }

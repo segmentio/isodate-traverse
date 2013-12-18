@@ -14,7 +14,6 @@
   ],
   "dependencies": {
     "each-component": "component/each#0.1.0",
-    "clone-component": "~0.1.0",
     "is": "ianstormtaylor/is#0.1.0",
     "isodate": "segmentio/isodate#0.0.1"
   }
