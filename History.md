@@ -1,3 +1,9 @@
+
+0.3.0 / 2014-01-30
+==================
+
+ * removing clone logic (addressing issue #2)
+
 0.2.0 - December 13, 2013
 -------------------------
 * add array support, by [@dominicbarnes](https://github.com/dominicbarnes)
