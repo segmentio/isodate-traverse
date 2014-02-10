@@ -1,8 +1,11 @@
 
-0.3.0 / 2014-01-30
-==================
+0.3.1 - February 10, 2013
+-------------------------
+* bump `is` dependency
 
- * removing clone logic (addressing issue #2)
+0.3.0 - January 30, 2013
+------------------------
+* removing clone logic (addressing issue #2)
 
 0.2.0 - December 13, 2013
 -------------------------

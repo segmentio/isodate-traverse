@@ -1,7 +1,7 @@
 {
   "name": "isodate-traverse",
   "repository": "git://github.com/segmentio/isodate-traverse.git",
-  "version": "0.2.0",
+  "version": "0.3.1",
   "license": "MIT",
   "description": "Traverse an object and convert all ISO strings into Dates.",
   "keywords": [
@@ -14,7 +14,7 @@
   ],
   "dependencies": {
     "each-component": "component/each#0.1.0",
-    "is": "ianstormtaylor/is#0.1.0",
+    "is": "ianstormtaylor/is#0.1.1",
     "isodate": "segmentio/isodate#0.0.1"
   }
 }
