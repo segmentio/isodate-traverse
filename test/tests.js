@@ -60,4 +60,9 @@ describe('isodate-traverse', function () {
     assert(equal(2011, obj.b[0].c.getFullYear()));
   });
 
+  it('should do nothing for non-objects or non-arrays', function () {
+    var date = new Date();
+    var ret = traverse(date, false);
+    assert(ret === date);
+  });
 });
