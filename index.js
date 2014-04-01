@@ -26,11 +26,9 @@ module.exports = traverse;
 function traverse (input, strict) {
   if (strict === undefined) strict = true;
 
-  if (is.object(input)) {
-    return object(input, strict);
-  } else if (is.array(input)) {
-    return array(input, strict);
-  }
+  if (is.object(input)) return object(input, strict);
+  if (is.array(input)) return array(input, strict);
+  return input;
 }
 
 /**
