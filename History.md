@@ -1,4 +1,10 @@
 
+0.3.2 - April 1, 2014
+---------------------
+
+ * using pinned each-component
+ * fix: returning non-objects
+
 0.3.1 - February 10, 2013
 -------------------------
 * bump `is` dependency
