@@ -13,7 +13,7 @@
     "convert"
   ],
   "dependencies": {
-    "each-component": "component/each#0.1.0",
+    "each-component": "segmentio/each#0.1.1",
     "is": "ianstormtaylor/is#0.1.1",
     "isodate": "segmentio/isodate#0.0.1"
   }
