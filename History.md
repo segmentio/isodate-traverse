@@ -1,7 +1,10 @@
 
+0.3.3 - July 2, 2014
+-------------------------
+* fix date parsing, bump isodate
+
 0.3.2 - April 1, 2014
 ---------------------
-
  * using pinned each-component
  * fix: returning non-objects
 
