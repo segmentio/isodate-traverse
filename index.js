@@ -1,13 +1,7 @@
 
-var is = require('is');
-var isodate = require('isodate');
-var each;
-
-try {
-  each = require('each');
-} catch (err) {
-  each = require('each-component');
-}
+var type = require('component-type');
+var each = require('component-each');
+var isodate = require('@segment/isodate');
 
 /**
  * Expose `traverse`.
@@ -26,8 +20,8 @@ module.exports = traverse;
 function traverse (input, strict) {
   if (strict === undefined) strict = true;
 
-  if (is.object(input)) return object(input, strict);
-  if (is.array(input)) return array(input, strict);
+  if (type(input) == 'object') return object(input, strict);
+  if (type(input) == 'array') return array(input, strict);
   return input;
 }
 
@@ -43,7 +37,7 @@ function object (obj, strict) {
   each(obj, function (key, val) {
     if (isodate.is(val, strict)) {
       obj[key] = isodate.parse(val);
-    } else if (is.object(val) || is.array(val)) {
+    } else if (type(val) == 'object' || type(val) == 'array') {
       traverse(val, strict);
     }
   });
@@ -60,7 +54,7 @@ function object (obj, strict) {
 
 function array (arr, strict) {
   each(arr, function (val, x) {
-    if (is.object(val)) {
+    if (type(val) == 'object') {
       traverse(val, strict);
     } else if (isodate.is(val, strict)) {
       arr[x] = isodate.parse(val);

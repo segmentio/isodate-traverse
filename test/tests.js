@@ -1,10 +1,10 @@
 
+var assert = require('assert');
+var equal = require('equals');
+var traverse = require('..');
+
+
 describe('isodate-traverse', function () {
-
-  var assert = require('assert');
-  var equal = require('equals');
-  var traverse = require('isodate-traverse');
-
   it('should convert isostrings', function () {
     var obj = { date: '2013-09-04T00:57:26.434Z' };
     traverse(obj);
