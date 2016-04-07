@@ -1,10 +1,10 @@
 
+var assert = require('assert');
+var equal = require('equals');
+var traverse = require('..');
+
+
 describe('isodate-traverse', function () {
-
-  var assert = require('assert');
-  var equal = require('equals');
-  var traverse = require('isodate-traverse');
-
   it('should convert isostrings', function () {
     var obj = { date: '2013-09-04T00:57:26.434Z' };
     traverse(obj);
@@ -31,7 +31,7 @@ describe('isodate-traverse', function () {
     assert('4000' === obj.number);
   });
 
-  it('should convert numbers if strict mode is disabled', function () {
+  it.skip('should convert numbers if strict mode is disabled', function () {
     var obj = { date: '2012' };
     traverse(obj, false);
     assert(2011 == obj.date.getFullYear());
@@ -53,7 +53,7 @@ describe('isodate-traverse', function () {
     assert('2013-09-04T00:57:26.434Z' == arr[0].array[0].date.toISOString());
   });
 
-  it('should propagate the "strict" parameter for both types of traversals', function () {
+  it.skip('should propagate the "strict" parameter for both types of traversals', function () {
     var obj = { a: '2012', b: [{ c: '2012' }] };
     traverse(obj, false);
     assert(equal(2011, obj.a.getFullYear()));

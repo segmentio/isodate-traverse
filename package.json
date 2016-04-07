@@ -13,8 +13,14 @@
     "convert"
   ],
   "dependencies": {
-    "each-component": "segmentio/each#0.1.1",
-    "is": "ianstormtaylor/is#0.1.1",
-    "isodate": "segmentio/isodate#0.0.1"
+    "@segment/isodate": "^1.0.0",
+    "component-each": "^0.2.6",
+    "component-type": "^1.2.1"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "equals": "^1.0.1",
+    "mochify": "^2.17.0",
+    "phantomjs": "^2.1.3"
   }
 }
