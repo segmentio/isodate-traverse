@@ -1,4 +1,12 @@
 
+1.0.0 / 2016-04-07
+==================
+
+  * test: disable broken stuff for now
+  * add `circle.yml`
+  * package: @segment/isodate@1
+  * remove component, add browserify
+
 0.3.3 - July 2, 2014
 -------------------------
 * fix date parsing, bump isodate
