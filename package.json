@@ -1,5 +1,5 @@
 {
-  "name": "isodate-traverse",
+  "name": "@segment/isodate-traverse",
   "repository": "git://github.com/segmentio/isodate-traverse.git",
   "version": "1.0.0",
   "license": "MIT",

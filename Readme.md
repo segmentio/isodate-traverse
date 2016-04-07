@@ -5,12 +5,12 @@
 
 ## Installation
 
-    $ component install segmentio/isodate-traverse
+    $ npm install @segment/isodate-traverse
 
 ## Example
 
 ```js
-var traverse = require('isodate-traverse');
+var traverse = require('@segment/isodate-traverse');
 
 var obj = {
   date: '2013-09-04T00:57:26.434Z'
