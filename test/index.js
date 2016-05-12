@@ -1,7 +1,7 @@
 
 var assert = require('assert');
 var equal = require('equals');
-var traverse = require('..');
+var traverse = require('../lib');
 
 
 describe('isodate-traverse', function () {
