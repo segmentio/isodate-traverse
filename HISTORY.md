@@ -1,3 +1,9 @@
+1.0.1 / 2016-05-12
+==================
+
+  * Modernize test/CI harness
+  * Fix linting errors
+  * Fix all IE7/8 compatibility issues
 
 1.0.0 / 2016-04-07
 ==================
