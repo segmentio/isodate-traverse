@@ -13,7 +13,6 @@ module.exports = function(config) {
     reporters: ['spec', 'coverage'],
 
     preprocessors: {
-      'lib/**/*.js': 'browserify',
       'test/**/*.js': 'browserify'
     },
 
