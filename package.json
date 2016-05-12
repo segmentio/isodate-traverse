@@ -46,6 +46,7 @@
     "karma-spec-reporter": "0.0.26",
     "mocha": "^2.2.5",
     "phantomjs-prebuilt": "^2.1.7",
+    "proclaim": "^3.4.1",
     "watchify": "^3.7.0"
   }
 }
