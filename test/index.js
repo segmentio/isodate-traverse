@@ -2,12 +2,13 @@
 
 var assert = require('proclaim');
 var traverse = require('../lib');
+var toISOString = require('to-iso-string');
 
 describe('isodate-traverse', function() {
   it('should convert isostrings', function() {
     var obj = { date: '2013-09-04T00:57:26.434Z' };
     traverse(obj);
-    assert.strictEqual(obj.date.toISOString(), '2013-09-04T00:57:26.434Z');
+    assert.strictEqual(toISOString(obj.date), '2013-09-04T00:57:26.434Z');
   });
 
   it('should not affect irrelevant object properties', function() {
@@ -39,7 +40,7 @@ describe('isodate-traverse', function() {
   it('should iterate through arrays', function() {
     var arr = [{ date: '2013-09-04T00:57:26.434Z' }];
     traverse(arr);
-    assert.strictEqual(arr[0].date.toISOString(), '2013-09-04T00:57:26.434Z');
+    assert.strictEqual(toISOString(arr[0].date), '2013-09-04T00:57:26.434Z');
   });
 
   it('should iterate through nested arrays', function() {
@@ -48,8 +49,8 @@ describe('isodate-traverse', function() {
       array: [{ date: '2013-09-04T00:57:26.434Z' }]
     }];
     traverse(arr);
-    assert.strictEqual(arr[0].date.toISOString(), '2013-09-04T00:57:26.434Z');
-    assert.strictEqual(arr[0].array[0].date.toISOString(), '2013-09-04T00:57:26.434Z');
+    assert.strictEqual(toISOString(arr[0].date), '2013-09-04T00:57:26.434Z');
+    assert.strictEqual(toISOString(arr[0].array[0].date), '2013-09-04T00:57:26.434Z');
   });
 
   it.skip('should propagate the "strict" parameter for both types of traversals', function() {
