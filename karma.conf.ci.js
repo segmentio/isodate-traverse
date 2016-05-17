@@ -1,3 +1,4 @@
+/* eslint-env node */
 'use strict';
 
 if (!process.env.SAUCE_USERNAME || !process.env.SAUCE_ACCESS_KEY) {
