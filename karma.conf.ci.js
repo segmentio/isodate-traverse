@@ -67,8 +67,6 @@ var customLaunchers = {
 };
 
 module.exports = {
-  concurrency: 1,
-
   singleRun: true,
 
   browsers: ['PhantomJS'].concat(Object.keys(customLaunchers)),
