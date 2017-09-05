@@ -65,4 +65,10 @@ describe('isodate-traverse', function() {
     var ret = traverse(date, false);
     assert.strictEqual(ret, date);
   });
+
+  it('should not break for objects with a `length` property', function() {
+    var obj = { date: '2013-09-04T00:57:26.434Z', length: 43 };
+    traverse(obj);
+    assert.strictEqual(toISOString(obj.date), '2013-09-04T00:57:26.434Z');
+  });
 });
