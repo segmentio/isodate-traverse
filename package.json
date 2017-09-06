@@ -1,6 +1,6 @@
 {
   "name": "@segment/isodate-traverse",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Traverse an object and convert all ISO strings into Dates.",
   "keywords": [
     "ISO",
