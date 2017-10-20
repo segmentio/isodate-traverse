@@ -26,7 +26,6 @@
   "homepage": "https://github.com/segmentio/isodate-traverse#readme",
   "dependencies": {
     "@segment/isodate": "^1.0.0",
-    "component-each": "^0.2.6",
     "component-type": "^1.2.1"
   },
   "devDependencies": {
