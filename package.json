@@ -31,11 +31,13 @@
   },
   "devDependencies": {
     "@segment/eslint-config": "^3.1.1",
+    "@segment/to-iso-string": "0.0.2",
     "browserify": "^13.0.0",
     "browserify-istanbul": "^2.0.0",
     "equals": "^1.0.1",
     "eslint": "^2.9.0",
     "eslint-plugin-mocha": "^2.2.0",
+    "eslint-plugin-react": "^4.3.0",
     "eslint-plugin-require-path-exists": "^1.1.5",
     "istanbul": "^0.4.3",
     "karma": "^0.13.22",
@@ -49,7 +51,6 @@
     "mocha": "^2.2.5",
     "phantomjs-prebuilt": "^2.1.7",
     "proclaim": "^3.4.1",
-    "to-iso-string": "0.0.2",
     "watchify": "^3.7.0"
   }
 }

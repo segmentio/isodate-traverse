@@ -2,7 +2,7 @@
 
 var assert = require('proclaim');
 var traverse = require('../lib');
-var toISOString = require('to-iso-string');
+var toISOString = require('@segment/to-iso-string');
 
 describe('isodate-traverse', function() {
   it('should convert isostrings', function() {
