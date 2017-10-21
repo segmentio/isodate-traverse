@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 4
+    version: 8
   environment:
     NPM_CONFIG_PROGRESS: false
     NPM_CONFIG_SPIN: false
