@@ -26,5 +26,25 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: Test package
-        run: yarn test
+        run: make test-node
 
+  saucelabs:
+    name: Test on Saucelabs
+
+    runs-on: ubuntu-latest
+
+    environment:
+      name: LIBRARIES_WEB
+
+    env:
+      SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+      SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+
+    steps:
+      - uses: saucelabs/sauce-connect-action@v1
+        with:
+          username: ${{ secrets.SAUCE_USERNAME }}
+          accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
+          tunnelIdentifier: github-action-tunnel
+          scVersion: 4.6.4
+        run: make test-browser
