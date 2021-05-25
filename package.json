@@ -1,6 +1,6 @@
 {
   "name": "@segment/isodate-traverse",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Traverse an object and convert all ISO strings into Dates.",
   "keywords": [
     "ISO",
@@ -25,8 +25,7 @@
   },
   "homepage": "https://github.com/segmentio/isodate-traverse#readme",
   "dependencies": {
-    "@segment/isodate": "^1.0.0",
-    "component-type": "^1.2.1"
+    "@segment/isodate": "^1.0.3"
   },
   "devDependencies": {
     "@segment/eslint-config": "^3.1.1",
