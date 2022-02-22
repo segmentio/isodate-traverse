@@ -31,10 +31,10 @@ describe('isodate-traverse', function() {
     assert.strictEqual(obj.number, '4000');
   });
 
-  it.skip('should convert numbers if strict mode is disabled', function() {
-    var obj = { date: '2012' };
+  it('should convert numbers if strict mode is disabled', function() {
+    var obj = { date: '2022' };
     traverse(obj, false);
-    assert.strictEqual(obj.date.getFullYear(), 2011);
+    assert.strictEqual(obj.date.getFullYear(), 2022);
   });
 
   it('should iterate through arrays', function() {
@@ -53,11 +53,11 @@ describe('isodate-traverse', function() {
     assert.strictEqual(toISOString(arr[0].array[0].date), '2013-09-04T00:57:26.434Z');
   });
 
-  it.skip('should propagate the "strict" parameter for both types of traversals', function() {
-    var obj = { a: '2012', b: [{ c: '2012' }] };
+  it('should propagate the "strict" parameter for both types of traversals', function() {
+    var obj = { a: '2022', b: [{ c: '2022' }] };
     traverse(obj, false);
-    assert.strictEqual(obj.a.getFullYear(), 2011);
-    assert.strictEqual(obj.b[0].c.getFullYear(), 2011);
+    assert.strictEqual(obj.a.getFullYear(), 2022);
+    assert.strictEqual(obj.b[0].c.getFullYear(), 2022);
   });
 
   it('should do nothing for non-objects or non-arrays', function() {
